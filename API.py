@@ -39,6 +39,6 @@ if ans== ("DEATHS"):
 #confirmnum= ans == c[]
     for c in res:
         if ans== c["countryRegion"]:
-            print(print("Confirmed: ")) + str(c["confirmed"]) + " " +(print("Deaths: ")) + str( c["deaths"])
+            print("Confirmed: ") + str(c["confirmed"]) + " " +"Deaths: " + str( c["deaths"])
     # if ans== res["countryregion"] in range (res):
     #     print(input)
