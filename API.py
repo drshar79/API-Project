@@ -14,7 +14,7 @@ res2=requests.get(URL2)
 res2=res2.json()
 
 #print(res[6])
-print(res2)
+#print(res2)
 
 #COVID-19 Recovered
 
@@ -30,7 +30,7 @@ URL4="https://covid19.mathdro.id/api/daily"
 res4=requests.get(URL3)
 res4=res4.json()
 
-<<<<<<< HEAD
+
 print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY infections?")
 ans = input()
 if ans== ("DEATHS"):
@@ -40,8 +40,4 @@ if ans== ("DEATHS"):
 #confirmnum= ans == c[]
     for c in res:
         if ans== c["countryRegion"]:
-            print("Confirmed: ") + str(c["confirmed"]) + " " +"Deaths: " + str( c["deaths"])
-    # if ans== res["countryregion"] in range (res):
-    #     print(input)
-=======
->>>>>>> parent of dc9beeb... Update API.py
+            print("Confirmed: ") + str(c["confirmed"]) + " " + ("Deaths: ") + str( c["deaths"])
