@@ -19,7 +19,6 @@ URL3= "https://covid19.mathdro.id/api/recovered"
 
 res3=requests.get(URL3)
 res3=res3.json()
-print(res3)
 
 #COVID-19 Daily
 
@@ -28,7 +27,8 @@ URL4="https://covid19.mathdro.id/api/daily"
 res4=requests.get(URL3)
 res4=res4.json()
 
-
+def NoCountry():
+    print("Country not found")
 print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY infections?")
 ans = input()
 #If input "DEATHS" was typed:
@@ -48,12 +48,15 @@ if ans==("CONFIRMED"):
             print(" ")
             print("Confirmed: " + str(c['confirmed']) + " " + "Deaths: " + str( c['deaths']))
 #If input "RECOVERED" was typed:
-def recov():
-    (r["confirmed"] + r["deaths"])/2
 if ans==("RECOVERED"):
     print("Type in a country: ")
     ans=input()
     for r in res3:
         if ans== r["countryRegion"]:
-            print("Recovered:" recov())
-            
+            print(" ")
+            print("Recovered: " + str(r['recovered']))  
+        else:
+            print(NoCountry())     
+            print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY infections?")
+ans = input()    
+             
