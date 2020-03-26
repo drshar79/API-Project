@@ -27,9 +27,8 @@ URL4="https://covid19.mathdro.id/api/daily"
 res4=requests.get(URL3)
 res4=res4.json()
 
-def NoCountry():
-    print("Country not found")
-print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY infections?")
+
+print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY recordings?")
 ans = input()
 #If input "DEATHS" was typed:
 if ans== ("DEATHS"):
@@ -39,6 +38,9 @@ if ans== ("DEATHS"):
         if ans== d["countryRegion"]:
             print(" ")
             print("Confirmed: " + str(d["confirmed"]) + " " + "Deaths: " + str( d["deaths"]))
+    else:
+        print("*NOTE* If nothing came up, that means that we were unable to find the country typed in. Please restart program to try again.") 
+
 #If input "CONFIRMED" was typed:
 if ans==("CONFIRMED"):
     print("Type in a country: ")
@@ -47,6 +49,8 @@ if ans==("CONFIRMED"):
         if ans == c["countryRegion"]:
             print(" ")
             print("Confirmed: " + str(c['confirmed']) + " " + "Deaths: " + str( c['deaths']))
+    else:
+        print("*NOTE* If nothing came up, that means that we were unable to find the country typed in. Please restart program to try again.") 
 #If input "RECOVERED" was typed:
 if ans==("RECOVERED"):
     print("Type in a country: ")
@@ -55,8 +59,16 @@ if ans==("RECOVERED"):
         if ans== r["countryRegion"]:
             print(" ")
             print("Recovered: " + str(r['recovered']))  
-        else:
-            print(NoCountry())     
-            print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY infections?")
-ans = input()    
+    else:
+        print("*NOTE* If nothing came up, that means that we were unable to find the country typed in. Please restart program to try again.")  
+# if input "DAILY" was typed:
+if ans == ("DAILY"):
+    print("Type in a country: ")
+    ans=input()
+    for q in res4:
+        if ans== q["countryRegion"]:
+            print(" ")
+            print("Confirmed: " + str(q["confirmed"]) + " " + "Deaths: " + str( q["deaths"]))
+    else:
+        print("*NOTE* If nothing came up, that means that we were unable to find the country typed in. Please restart program to try again.")        
              
