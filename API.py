@@ -28,7 +28,7 @@ res4=requests.get(URL3)
 res4=res4.json()
 
 
-print ("COVID-19 is rapidly spreading across the world, and a lot of data has been recorded. Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY recordings?")
+print (" Would you like to see data about COVID-19 DEATHS, CONFIRMED infections, RECOVERED patients, or DAILY recordings?")
 ans = input()
 #If input "DEATHS" was typed:
 if ans== ("DEATHS"):
